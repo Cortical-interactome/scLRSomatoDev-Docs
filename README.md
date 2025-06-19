@@ -25,7 +25,7 @@ uv venv mkdocs
 
 # Activate the virtual environment
 # On Windows:
-.venv\Scripts\activate
+.mkdocs\Scripts\activate
 # On Unix or MacOS:
 source .mkdocs/bin/activate
 ```
