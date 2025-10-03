@@ -55,6 +55,16 @@ The table contains detailed information about:
 
 ## Number of interactions
 
+### Tutorial Video
+
+**Watch this video tutorial** to learn how to explore and analyze the number of ligand-receptor interactions between cell types across different developmental stages. Don't hesitate to watch it multiple times or press pause if you need to.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iDKWQTSqXAc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The video above demonstrates how to navigate the interaction number visualizations and customize the heatmaps. If you prefer detailed text instructions, continue reading below.
+
+----
+
 This section is divided in two parts:
 
 - **[Defined time points](#defined-time-points)**: Visualize the number of predicted interactions (ligand-receptor pairs) between each cell-type pair for each developmental age, .i.e. , E18.5-P0, P1-P2, P4-P5, P8, P16, P30, and Adult. 
@@ -101,6 +111,16 @@ You can filter the heatmap by:
 ***Once you obtain the plot you are interested in, you can download the plot as SVG file using the download button in the top right corner of the plot (camera icon).***
 
 ## Intercellular/Intracellular signaling
+
+### Tutorial Video
+
+**Watch this video tutorial** to learn how to use intercellular and intracellular signaling plots to explore ligand-receptor pairs, and understand the pathways involved in cell-cell communication. Don't hesitate to watch it multiple times or press pause if you need to.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U-HCEW2Swzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The video above demonstrates how to navigate the signaling analysis visualizations and customize the dot plots. If you prefer detailed text instructions, continue reading below.
+
+----
 
 Visualize which ligand-receptor pairs are likely to be present between cell-type pairs and the pathways in which they are involved. This is shown as a dot plot, available for each developmental age.
 By default, LR-pairs are on the y-axis and interactions are on the x-axis. The dot size represents the `S_inter` score and the color represents the `S_intra` score.
