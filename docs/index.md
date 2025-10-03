@@ -1,4 +1,4 @@
-![scLRSomatoDev logo](img/logo_scLRSomatoDev.webp)
+![scLRSomatoDev logo](img/logo_scLRSomatoDev.svg)
 
 ## Welcome to scLRSomatoDev documentation
 
@@ -12,6 +12,16 @@ This documentation provides a guide to the features available in the app.
 
 To begin using scLRSomatoDev, please visit the [Installation](Installation.md) page for setup instructions. You can choose from multiple installation options including an online version, local R setup, or Docker deployment.
 
+### Try a lite version of scLRSomatoDev Online!
+
+Explore a lite, feature-focused version of our app directly in your browser—no installation required.
+
+1.  Go to [sclrsomatodev.online](http://sclrsomatodev.online/) and click the **"Try the Lite version!"** button.
+2.  **Please be patient while the app loads.** This process can take several minutes, and your browser may temporarily display an error message.
+3.  Once the "Overview" page appears, you're ready to start exploring!
+
+> [!NOTE]
+> We are currently hosted on a server with limited resources. We appreciate your understanding as we work to improve performance.
 ## Gene Expression
 
 The "Gene Expression" tab allows you to visualize gene expression data in various ways:
