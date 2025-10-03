@@ -23,6 +23,16 @@ The metadata contains detailed information about:
 
 ## Clustering results and Feature plots
 
+### Tutorial Video
+
+**Watch this video tutorial** to learn how to effectively use the clustering results and feature plots for visualizing gene expression patterns in different cell types. don't hesitate to watch it multiple times or press pause if you need to.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bYj-3cOL65w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The video above demonstrates how to navigate and customize the clustering and feature plot visualizations. If you prefer detailed text instructions, continue reading below.
+
+----
+
 This section is divided into two primary parts:
 
 - **[Clustering results by grouping level](#clustering-results-by-grouping-level)**: Visualize cell identities on a dimensionality reduction plot.
@@ -53,7 +63,7 @@ By default, the app will display the 3D UMAP using the grouping level "cell-type
 - **Main Filters**: Choose dimension reduction method, grouping level, age, and select up to two genes for the feature plot.
 - **Grouping Level Filters**: Filter by class, family, subclass, cell-type, etc.
 - **Other Filters**: Filter by region, study, platform, or RNA-seq method.
-- **Plot options**: Adjust the plot height.
+- **Plot options**: Adjust the plot height, width and color palette.
 
 ***Once you obtain the plot you are interested in, you can download the plot as SVG file using the download button in the top right corner of the plot (camera icon).***
 
@@ -66,6 +76,16 @@ The expression of the genes is displayed as CPM (counts per million) values. As 
 ***Once you obtain the plot you are interested in, you can download the plot as SVG file using the download button in the top right corner of the plot (camera icon).***
 
 ## Absolute Expression
+
+### Tutorial Video
+
+**Watch this video tutorial** to learn how to use the absolute expression visualizations for analyzing gene expression patterns across different cell groups and developmental stages. don't hesitate to watch it multiple times or press pause if you need to.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JT_b6ZkJwEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The video above demonstrates how to navigate and customize the absolute expression plots. If you prefer detailed text instructions, continue reading below.
+
+----
 
 This section has two subsections to visualize gene expression:
 
@@ -119,6 +139,8 @@ You can granularly filter the data to be displayed by:
 -   **RNA-seq method**: Select the RNA-seq method that you want to be
     displayed.
 
+You can also modify the height, width and color palette of the plots in the Plot options panel.
+
 ***Once you have selected the parameters, select the genes that you want to be displayed (up to 500 genes can be selected at a time).***
 
 ***You can download as SVG file using the download button in the top right corner of the plot (camera icon).***
@@ -129,10 +151,28 @@ This plot shows the gene expression of the genes selected by your filters on a h
 
 ***Once you have selected the parameters, you can download the plot as SVG file using the download button in the top right corner of the plot (camera icon).***
 
+## Tutorial video for Pseudo-maturation, Pseudo-layer & Transcriptional Landscape
+
+Tutorial for Pseudo-maturation, Pseudo-layer & Transcriptional Landscape
+
+**Watch this comprehensive video tutorial** covering the last three sections of gene expression analysis: Pseudo-maturation, Pseudo-layer, and Transcriptional Landscape. Don't hesitate to watch it multiple times or press pause if you need to.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4bkAER6j1Lc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+This video provides an overview of all three advanced visualization sections below. Each section also has detailed text instructions for specific features.
+
+----
+
 ## Pseudo-maturation
 
-Visualize the dynamics of gene expression along the pseudo-maturation axis, either as a heatmap or as curves. 
-You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and select up to 50 genes.
+Visualize the dynamics of gene expression along the pseudo-maturation axis, either as a heatmap or as curves.
+
+You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and select up to 50 genes. You can also modify the height, width and color palette of the plots in the Plot options panel.
+
+TODO : add a more detailed description of the pseudo-maturation axis.
+
+**The Pseudo-maturation plots are not interactive. For now you can only grab the plot via a screenshot.**
 
 <div class="tabbed-images">
     <input type="radio" id="tab-pseudo-heatmap" name="image-tabs-pseudo" checked>
@@ -151,7 +191,12 @@ You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTN
 ## Pseudo-layer
 
 Visualize the dynamics of gene expression along the pseudo-layer axis, either as a heatmap or as curves. 
-You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and age, and select up to 50 genes.
+
+You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and age, and select up to 50 genes. You can also modify the height, width and color palette of the plots in the Plot options panel.
+
+TODO : add a more detailed description of the pseudo-layer axis.
+
+**The Pseudo-layer plots are not interactive. For now you can only grab the plot via a screenshot.**
 
 <div class="tabbed-images">
     <input type="radio" id="tab-layer-heatmap" name="image-tabs-layer" checked>
@@ -167,9 +212,16 @@ You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTN
     </div>
 </div>
 
+
+
 ## Transcriptional landscape
 
 Visualize the dynamics of gene expression along both the pseudo-maturation and pseudo-layer axes, represented as a 2D map for each family.
-You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and select up to 50 genes.
+
+You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and select up to 50 genes.You can also modify the height, width and color palette of the plots in the Plot options panel.
+
+TODO : add a more detailed description of the transcriptional landscape.
+
+**The Landscape plots are not interactive. For now you can only grab the plot via a screenshot.**
 
 ![Transcriptional landscape](../img/landscape.webp)
