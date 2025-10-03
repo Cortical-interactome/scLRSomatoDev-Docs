@@ -1,0 +1,135 @@
+/* Custom CSS for scLRSomatoDev documentation */
+
+/* website general settings */
+html {
+    scroll-behavior: smooth;
+}
+
+/* header settings */
+.md-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+/* footer settings */
+.md-footer {
+    background-color: #2c3e50;
+    margin-top: 6em;
+}
+
+.md-footer-meta__inner {
+    justify-content: center;
+}
+
+/* Add vertical spacing to avoid using <br> tags */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+p, ul, ol, dl, table, blockquote {
+    margin-bottom: 1em;
+}
+
+/* Add extra space around images */
+img {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+/* --- Material Design Tabs --- */
+.tabbed-images {
+  position: relative;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #e0e0e0; /* Continuous bottom line for the tab bar */
+}
+
+/* Hide the radio buttons */
+.tabbed-images input[type="radio"] {
+  display: none;
+}
+
+/* Style the tab labels */
+.tabbed-images label {
+  display: inline-block;
+  padding: 10px 15px;
+  background: none; /* No background */
+  border: none; /* No borders */
+  border-bottom: 2px solid transparent; /* Placeholder for active indicator */
+  cursor: pointer;
+  position: relative;
+  top: 1px;
+  margin-right: 10px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #555;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Style for the active tab label */
+.tabbed-images input[type="radio"]:checked + label {
+  color: #18bc9c; /* Accent color */
+  border-bottom: 2px solid #18bc9c; /* Accent color indicator */
+  font-weight: 700;
+}
+
+/* Style for the tab content area */
+.tabbed-images .tab-content {
+  display: none;
+  padding: 15px 0; /* Less padding, no border */
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.tabbed-images .tab-content img {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid #e0e0e0; /* Optional: light border around image */
+    border-radius: 4px;
+}
+
+/* Show content based on checked radio button */
+#tab-dotplot:checked ~ #content-dotplot,
+#tab-heatmap:checked ~ #content-heatmap,
+#tab-age:checked ~ #content-age,
+#tab-clustering:checked ~ #content-clustering,
+#tab-features:checked ~ #content-features,
+#tab-pseudo-heatmap:checked ~ #content-pseudo-heatmap,
+#tab-pseudo-curve:checked ~ #content-pseudo-curve,
+#tab-layer-heatmap:checked ~ #content-layer-heatmap,
+#tab-layer-curve:checked ~ #content-layer-curve,
+#tab-lrdb-main:checked ~ #content-lrdb-main,
+#tab-lrdb-table:checked ~ #content-lrdb-table,
+#tab-lrdb-location:checked ~ #content-lrdb-location,
+#tab-lrdb-category:checked ~ #content-lrdb-category,
+#tab-lrdb-ligand:checked ~ #content-lrdb-ligand,
+#tab-lrdb-receptor:checked ~ #content-lrdb-receptor,
+#tab-noi-main:checked ~ #content-noi-main,
+#tab-noi-contiguous:checked ~ #content-noi-contiguous,
+#tab-inter-main:checked ~ #content-inter-main,
+#tab-inter-error:checked ~ #content-inter-error {
+  display: block;
+}
+
+/* Back-to-top button styling */
+#back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#back-to-top:hover {
+    background-color: #18bc9c; /* A color you previously liked */
+}

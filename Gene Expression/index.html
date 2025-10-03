@@ -1,0 +1,867 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Installation/">
+      
+      
+        <link rel="next" href="../Ligand-Receptor/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
+    
+    
+      
+        <title>Gene Expression - scLRSomatoDev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gene-expression" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="scLRSomatoDev" class="md-header__button md-logo" aria-label="scLRSomatoDev" data-md-component="logo">
+      
+  <img src="../img/logo_scLRSomatoDev.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            scLRSomatoDev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gene Expression
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Cortical-interactome/scLRSomatoDev/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="scLRSomatoDev" class="md-nav__button md-logo" aria-label="scLRSomatoDev" data-md-component="logo">
+      
+  <img src="../img/logo_scLRSomatoDev.svg" alt="logo">
+
+    </a>
+    scLRSomatoDev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Cortical-interactome/scLRSomatoDev/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Gene Expression
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Gene Expression
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-table" class="md-nav__link">
+    Metadata Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-results-and-feature-plots" class="md-nav__link">
+    Clustering results and Feature plots
+  </a>
+  
+    <nav class="md-nav" aria-label="Clustering results and Feature plots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-video" class="md-nav__link">
+    Tutorial Video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-results-by-grouping-level" class="md-nav__link">
+    Clustering results by grouping level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-plots" class="md-nav__link">
+    Feature plots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-expression" class="md-nav__link">
+    Absolute Expression
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute Expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-video_1" class="md-nav__link">
+    Tutorial Video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gene-expression-by-grouping-level" class="md-nav__link">
+    Gene expression by grouping level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gene-expression-by-grouping-level-and-by-age" class="md-nav__link">
+    Gene expression by grouping level and by age
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-video-for-pseudo-maturation-pseudo-layer-transcriptional-landscape" class="md-nav__link">
+    Tutorial video for Pseudo-maturation, Pseudo-layer &amp; Transcriptional Landscape
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-maturation" class="md-nav__link">
+    Pseudo-maturation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-layer" class="md-nav__link">
+    Pseudo-layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transcriptional-landscape" class="md-nav__link">
+    Transcriptional landscape
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ligand-Receptor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ligand-Receptor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-table" class="md-nav__link">
+    Metadata Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-results-and-feature-plots" class="md-nav__link">
+    Clustering results and Feature plots
+  </a>
+  
+    <nav class="md-nav" aria-label="Clustering results and Feature plots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-video" class="md-nav__link">
+    Tutorial Video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-results-by-grouping-level" class="md-nav__link">
+    Clustering results by grouping level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-plots" class="md-nav__link">
+    Feature plots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-expression" class="md-nav__link">
+    Absolute Expression
+  </a>
+  
+    <nav class="md-nav" aria-label="Absolute Expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-video_1" class="md-nav__link">
+    Tutorial Video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gene-expression-by-grouping-level" class="md-nav__link">
+    Gene expression by grouping level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gene-expression-by-grouping-level-and-by-age" class="md-nav__link">
+    Gene expression by grouping level and by age
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-video-for-pseudo-maturation-pseudo-layer-transcriptional-landscape" class="md-nav__link">
+    Tutorial video for Pseudo-maturation, Pseudo-layer &amp; Transcriptional Landscape
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-maturation" class="md-nav__link">
+    Pseudo-maturation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-layer" class="md-nav__link">
+    Pseudo-layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transcriptional-landscape" class="md-nav__link">
+    Transcriptional landscape
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="gene-expression">Gene Expression</h1>
+<p>This tab allows to visualize the expression of a given genes in the different cell types of the somatosensory cortex.</p>
+<h2 id="metadata-table">Metadata Table</h2>
+<p>Access and review the metadata associated with the 17 datasets used in this study. </p>
+<p>You can filter the table, change the number of rows displayed, and navigate through pages.</p>
+<p><strong><em>In case you need more information about the metadata, you can find a detailed description in the Help tab.</em></strong></p>
+<p>The metadata contains detailed information about:</p>
+<ul>
+<li><strong>Cell Information</strong>: <code>orig.ident</code>, <code>nCount_RNA</code>, <code>nFeature_RNA</code>, <code>percent.mito</code>, <code>percent.ribo</code>, <code>Doublet.score</code>, etc.</li>
+<li><strong>Sample Information</strong>: <code>platform_id/label/color</code>, <code>age.at.collection</code>, <code>S.Score</code>, <code>G2M.Score</code>, <code>Phase</code>, <code>region_id/label/color</code>, <code>study_id/label/color</code>, etc.</li>
+<li><strong>Cell Type Information</strong>: <code>pred.class_PAB21model_id/label/color</code>, <code>class_id/label/color</code>, <code>pred.class_hicat_id/label/color</code>, etc.</li>
+<li><strong>Branch Information</strong>: <code>all.branch1_score/enrichment</code>, <code>pred.branch_MM_id/label/color</code>, <code>branch_id/label/color</code>, etc.</li>
+<li><strong>Cluster Information</strong>: <code>cluster_id/label/color</code>, <code>supertype_id/label/color</code>, <code>subclass_id/label/color</code>, etc.</li>
+<li><strong>Dimensionality Reduction</strong>: UMAP, tSNE, PCA, and ICA coordinates.</li>
+</ul>
+<p><strong><em>The table data can be downloaded as a CSV or XLSX file, but note that only the visible rows will be downloaded.</em></strong></p>
+<h2 id="clustering-results-and-feature-plots">Clustering results and Feature plots</h2>
+<h3 id="tutorial-video">Tutorial Video</h3>
+<p><strong>Watch this video tutorial</strong> to learn how to effectively use the clustering results and feature plots for visualizing gene expression patterns in different cell types. don't hesitate to watch it multiple times or press pause if you need to.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bYj-3cOL65w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>The video above demonstrates how to navigate and customize the clustering and feature plot visualizations. If you prefer detailed text instructions, continue reading below.</p>
+<hr />
+<p>This section is divided into two primary parts:</p>
+<ul>
+<li><strong><a href="#clustering-results-by-grouping-level">Clustering results by grouping level</a></strong>: Visualize cell identities on a dimensionality reduction plot.</li>
+<li><strong><a href="#feature-plots">Feature plots</a></strong>: Visualize the expression of one or two genes on on a dimensionality reduction plot.</li>
+</ul>
+<p><strong>All plots are interactive</strong>, allowing you to Zoom in, Zoom out and hover on points to view cells metadata.</p>
+<div class="tabbed-images">
+    <input type="radio" id="tab-clustering" name="image-tabs-clustering" checked>
+    <label for="tab-clustering">Clustering</label>
+    <input type="radio" id="tab-features" name="image-tabs-clustering">
+    <label for="tab-features">Feature Plot</label>
+
+    <div class="tab-content" id="content-clustering">
+        <img src="../img/clustering_umap.webp" alt="Clustering results by grouping level">
+    </div>
+    <div class="tab-content" id="content-features">
+        <img src="../img/clustering_feature_plots.webp" alt="Feature plots of gene expression">
+    </div>
+</div>
+
+<h3 id="clustering-results-by-grouping-level">Clustering results by grouping level</h3>
+<p>The plot displays the clustering results of the cells selected by your filters in the UMAP/t-SNE space. </p>
+<p>By default, the app will display the 3D UMAP using the grouping level "cell-type" for all combined time points. We invite you to <strong>customize the plot parameters using the sidebar panel to find the best visualization for your analysis.</strong></p>
+<ul>
+<li><strong>Main Filters</strong>: Choose dimension reduction method, grouping level, age, and select up to two genes for the feature plot.</li>
+<li><strong>Grouping Level Filters</strong>: Filter by class, family, subclass, cell-type, etc.</li>
+<li><strong>Other Filters</strong>: Filter by region, study, platform, or RNA-seq method.</li>
+<li><strong>Plot options</strong>: Adjust the plot height, width and color palette.</li>
+</ul>
+<p><strong><em>Once you obtain the plot you are interested in, you can download the plot as SVG file using the download button in the top right corner of the plot (camera icon).</em></strong></p>
+<h3 id="feature-plots">Feature plots</h3>
+<p>This plot shows the expression of on or two genes on a dimensionality reduction plot using your filters. This kind of representation is useful to visualize the distribution of expression of a gene in a given groups of cells.</p>
+<p>The expression of the genes is displayed as CPM (counts per million) values. As the plots are interactive, we invite you to zoom in and out and hover on points to see the a detailed metadata of the cells expressing the gene.</p>
+<p><strong><em>Once you obtain the plot you are interested in, you can download the plot as SVG file using the download button in the top right corner of the plot (camera icon).</em></strong></p>
+<h2 id="absolute-expression">Absolute Expression</h2>
+<h3 id="tutorial-video_1">Tutorial Video</h3>
+<p><strong>Watch this video tutorial</strong> to learn how to use the absolute expression visualizations for analyzing gene expression patterns across different cell groups and developmental stages. don't hesitate to watch it multiple times or press pause if you need to.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JT_b6ZkJwEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>The video above demonstrates how to navigate and customize the absolute expression plots. If you prefer detailed text instructions, continue reading below.</p>
+<hr />
+<p>This section has two subsections to visualize gene expression:</p>
+<ol>
+<li><strong><a href="#gene-expression-by-grouping-level">Gene expression by grouping level</a></strong>: Visualizes the expression of up to 500 selected genes by grouping level, on either a heatmap or a dot plot.</li>
+<li><strong><a href="#gene-expression-by-grouping-level-and-by-age">Gene expression by grouping level and by age</a></strong>: Visualizes the expression of a selected gene categorized by your chosen grouping level at each age, on a heatmap.</li>
+</ol>
+<p><strong>All plots are interactive</strong>, allowing you to Zoom in, Zoom out and hover on points to view metadata.</p>
+<div class="tabbed-images">
+    <input type="radio" id="tab-dotplot" name="image-tabs-absolute" checked>
+    <label for="tab-dotplot">Dot Plot</label>
+    <input type="radio" id="tab-heatmap" name="image-tabs-absolute">
+    <label for="tab-heatmap">Heatmap</label>
+    <input type="radio" id="tab-age" name="image-tabs-absolute">
+    <label for="tab-age">By Age</label>
+
+    <div class="tab-content" id="content-dotplot">
+        <img src="../img/Gene_expression_dot.webp" alt="Gene expression by grouping level - Dot plot">
+    </div>
+    <div class="tab-content" id="content-heatmap">
+        <img src="../img/Gene_expression_heatmap.webp" alt="Gene expression by grouping level - Heatmap">
+    </div>
+    <div class="tab-content" id="content-age">
+        <img src="../img/Gene_expression_age.webp" alt="Gene expression by grouping level and by age">
+    </div>
+</div>
+
+<h3 id="gene-expression-by-grouping-level">Gene expression by grouping level</h3>
+<p>This plot shows the gene expression of the genes selected by your filters on a heatmap or a dot plot. When using the dot plot, the dot size represents the proportion of cells (%) expressing the gene within cells filtered by your parameters.</p>
+<p>You can granularly filter the data to be displayed by:</p>
+<ul>
+<li>
+<p><strong>Grouping level</strong>: Select the identity of the cells that you want
+    to be displayed. it can be:</p>
+<ul>
+<li><strong>Class</strong>: GABAergic or Glutamatergic or both.</li>
+<li><strong>Family</strong>: any combination of ET, IT, Lamp5 Pvalb, Sst and others GABANS or GLUTNs.</li>
+<li><strong>Subclass</strong>: any combination of Car3, CR, L2/3 IT CTX, L4/5 IT CTX, L5 IT CTX, L5 NP CTX, L5 PT CTX, L6 CT CTX, L6b CTX, Lamp5, Pvalb, Sncg, Sst, Sst Chodl and Vip. </li>
+<li><strong>Cell-type</strong>: any combination of Car3 Claustrum-like, CR, L2/3 IT, L4 IT|ssc, L4/5 IT|PC, L5 IT, L5/6 NP, L6 IT, L6b, Lamp5|L1-L5 NGC, Lamp5|L1 A7C/CNC, Pvalb|L2/3-L4 FS BC, Pvalb|L2/3 CHC, Pvalb|L4/5 FS BC, Pvalb|L5/6 FS BC, Sncg|CCK BC, Sst Chodll|LPC, Sst|FS-like, Sst|L2/3-L5 fan-MC, sst|L4 IVC, sst|L5 T-MC, Sst|L5/L6 NMC, Vip|L2/3-L4 BP/BTC, Vip|L2/3-L5 BP/BTC and Vip|Uncharacterized. </li>
+<li><strong>Original cell-type</strong> is a even more fine-grained grouping level that can be used to filter the data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Age</strong>: Select the age that you want to be displayed. <strong>Note that if you select multiple ages, the expression of the genes will be averaged across the selected ages.</strong></p>
+</li>
+<li>
+<p><strong>Region</strong>: Select the region that you want to be displayed.</p>
+</li>
+<li>
+<p><strong>Study</strong>: Select the study that you want to be displayed.</p>
+</li>
+<li>
+<p><strong>Platform</strong>: Select the sequencing platform that you want to be
+    displayed.</p>
+</li>
+<li>
+<p><strong>RNA-seq method</strong>: Select the RNA-seq method that you want to be
+    displayed.</p>
+</li>
+</ul>
+<p>You can also modify the height, width and color palette of the plots in the Plot options panel.</p>
+<p><strong><em>Once you have selected the parameters, select the genes that you want to be displayed (up to 500 genes can be selected at a time).</em></strong></p>
+<p><strong><em>You can download as SVG file using the download button in the top right corner of the plot (camera icon).</em></strong></p>
+<h3 id="gene-expression-by-grouping-level-and-by-age">Gene expression by grouping level and by age</h3>
+<p>This plot shows the gene expression of the genes selected by your filters on a heatmap, categorized by your chosen grouping level at each age. This kind of representation is useful to visualize the evolution of the expression of a gene in a given groups of cells at different ages.</p>
+<p><strong><em>Once you have selected the parameters, you can download the plot as SVG file using the download button in the top right corner of the plot (camera icon).</em></strong></p>
+<h2 id="tutorial-video-for-pseudo-maturation-pseudo-layer-transcriptional-landscape">Tutorial video for Pseudo-maturation, Pseudo-layer &amp; Transcriptional Landscape</h2>
+<p>Tutorial for Pseudo-maturation, Pseudo-layer &amp; Transcriptional Landscape</p>
+<p><strong>Watch this comprehensive video tutorial</strong> covering the last three sections of gene expression analysis: Pseudo-maturation, Pseudo-layer, and Transcriptional Landscape. Don't hesitate to watch it multiple times or press pause if you need to.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4bkAER6j1Lc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>This video provides an overview of all three advanced visualization sections below. Each section also has detailed text instructions for specific features.</p>
+<hr />
+<h2 id="pseudo-maturation">Pseudo-maturation</h2>
+<p>Visualize the dynamics of gene expression along the pseudo-maturation axis, either as a heatmap or as curves.</p>
+<p>You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and select up to 50 genes. You can also modify the height, width and color palette of the plots in the Plot options panel.</p>
+<p>TODO : add a more detailed description of the pseudo-maturation axis.</p>
+<p><strong>The Pseudo-maturation plots are not interactive. For now you can only grab the plot via a screenshot.</strong></p>
+<div class="tabbed-images">
+    <input type="radio" id="tab-pseudo-heatmap" name="image-tabs-pseudo" checked>
+    <label for="tab-pseudo-heatmap">Heatmap</label>
+    <input type="radio" id="tab-pseudo-curve" name="image-tabs-pseudo">
+    <label for="tab-pseudo-curve">Curve</label>
+
+    <div class="tab-content" id="content-pseudo-heatmap">
+        <img src="../img/pseudo_maturation_heatmap.webp" alt="Pseudo-maturation Heatmap">
+    </div>
+    <div class="tab-content" id="content-pseudo-curve">
+        <img src="../img/pseudo_maturation_curve.webp" alt="Pseudo-maturation Curve">
+    </div>
+</div>
+
+<h2 id="pseudo-layer">Pseudo-layer</h2>
+<p>Visualize the dynamics of gene expression along the pseudo-layer axis, either as a heatmap or as curves. </p>
+<p>You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and age, and select up to 50 genes. You can also modify the height, width and color palette of the plots in the Plot options panel.</p>
+<p>TODO : add a more detailed description of the pseudo-layer axis.</p>
+<p><strong>The Pseudo-layer plots are not interactive. For now you can only grab the plot via a screenshot.</strong></p>
+<div class="tabbed-images">
+    <input type="radio" id="tab-layer-heatmap" name="image-tabs-layer" checked>
+    <label for="tab-layer-heatmap">Heatmap</label>
+    <input type="radio" id="tab-layer-curve" name="image-tabs-layer">
+    <label for="tab-layer-curve">Curve</label>
+
+    <div class="tab-content" id="content-layer-heatmap">
+        <img src="../img/pseudo_layer_heatmap.webp" alt="Pseudo-layer Heatmap">
+    </div>
+    <div class="tab-content" id="content-layer-curve">
+        <img src="../img/pseudo_layer_curve.webp" alt="Pseudo-layer Curve">
+    </div>
+</div>
+
+<h2 id="transcriptional-landscape">Transcriptional landscape</h2>
+<p>Visualize the dynamics of gene expression along both the pseudo-maturation and pseudo-layer axes, represented as a 2D map for each family.</p>
+<p>You can filter by family (ET, IT, Lamp5 Pvalb, Sst,others GABANS or others GLUTNs) and select up to 50 genes.You can also modify the height, width and color palette of the plots in the Plot options panel.</p>
+<p>TODO : add a more detailed description of the transcriptional landscape.</p>
+<p><strong>The Landscape plots are not interactive. For now you can only grab the plot via a screenshot.</strong></p>
+<p><img alt="Transcriptional landscape" src="../img/landscape.webp" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="../js/custom.js"></script>
+      
+    
+  </body>
+</html>

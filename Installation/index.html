@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Gene%20Expression/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
+    
+    
+      
+        <title>Installation - scLRSomatoDev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="scLRSomatoDev" class="md-header__button md-logo" aria-label="scLRSomatoDev" data-md-component="logo">
+      
+  <img src="../img/logo_scLRSomatoDev.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            scLRSomatoDev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Cortical-interactome/scLRSomatoDev/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="scLRSomatoDev" class="md-nav__button md-logo" aria-label="scLRSomatoDev" data-md-component="logo">
+      
+  <img src="../img/logo_scLRSomatoDev.svg" alt="logo">
+
+    </a>
+    scLRSomatoDev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Cortical-interactome/scLRSomatoDev/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-starting" class="md-nav__link">
+    Before starting
+  </a>
+  
+    <nav class="md-nav" aria-label="Before starting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-system-requirements" class="md-nav__link">
+    Minimum System Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-tutorial-video" class="md-nav__link">
+    Installation Tutorial Video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-the-project-files" class="md-nav__link">
+    Get the project files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-required-data" class="md-nav__link">
+    Download the required data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-sclrsomatodev" class="md-nav__link">
+    Run scLRSomatoDev
+  </a>
+  
+    <nav class="md-nav" aria-label="Run scLRSomatoDev">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-docker-recommended" class="md-nav__link">
+    Using Docker (Recommended)
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Docker (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-build-the-docker-image" class="md-nav__link">
+    1. Build the Docker Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-run-the-docker-container" class="md-nav__link">
+    2. Run the Docker Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-launch-the-app" class="md-nav__link">
+    3. Launch the App
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-rstudio" class="md-nav__link">
+    Using RStudio
+  </a>
+  
+    <nav class="md-nav" aria-label="Using RStudio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-instructions" class="md-nav__link">
+    Setup Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    Learn More
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gene%20Expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gene Expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ligand-Receptor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ligand-Receptor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-starting" class="md-nav__link">
+    Before starting
+  </a>
+  
+    <nav class="md-nav" aria-label="Before starting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-system-requirements" class="md-nav__link">
+    Minimum System Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-tutorial-video" class="md-nav__link">
+    Installation Tutorial Video
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-the-project-files" class="md-nav__link">
+    Get the project files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-required-data" class="md-nav__link">
+    Download the required data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-sclrsomatodev" class="md-nav__link">
+    Run scLRSomatoDev
+  </a>
+  
+    <nav class="md-nav" aria-label="Run scLRSomatoDev">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-docker-recommended" class="md-nav__link">
+    Using Docker (Recommended)
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Docker (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-build-the-docker-image" class="md-nav__link">
+    1. Build the Docker Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-run-the-docker-container" class="md-nav__link">
+    2. Run the Docker Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-launch-the-app" class="md-nav__link">
+    3. Launch the App
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-rstudio" class="md-nav__link">
+    Using RStudio
+  </a>
+  
+    <nav class="md-nav" aria-label="Using RStudio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-instructions" class="md-nav__link">
+    Setup Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    Learn More
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="installation">Installation</h1>
+<p>There are multiple ways to use scLRSomatoDev, from a simple online version to a local installation for more intensive use.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#before-starting">Before starting</a><ul>
+<li><a href="#minimum-system-requirements">Minimum System Requirements</a></li>
+<li><a href="#installation-tutorial-video">Installation Tutorial Video</a></li>
+<li><a href="#get-the-project-files">Get the project files</a></li>
+<li><a href="#download-the-required-data">Download the required data</a></li>
+</ul>
+</li>
+<li><a href="#run-sclrsomatodev">Run scLRSomatoDev</a><ul>
+<li><a href="#using-docker-recommended">Using Docker (Recommended)</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#1-build-the-docker-image">1. Build the Docker Image</a></li>
+<li><a href="#2-run-the-docker-container">2. Run the Docker Container</a></li>
+<li><a href="#3-launch-the-app">3. Launch the App</a></li>
+<li><a href="#using-rstudio">Using RStudio</a></li>
+<li><a href="#prerequisites-1">Prerequisites</a></li>
+<li><a href="#setup-instructions">Setup Instructions</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a href="#next-steps">Next Steps</a><ul>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#learn-more">Learn More</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="before-starting">Before starting</h2>
+<h3 id="minimum-system-requirements">Minimum System Requirements</h3>
+<ul>
+<li>Processor: 8+ cores (Intel/AMD)</li>
+<li>Memory: 32GB RAM (64GB recommended for Docker)</li>
+<li>Storage: 50GB+ free space</li>
+<li>Display: 1920 x 1080 resolution or Higher</li>
+<li>Operating System: Windows 10/11 (64-bit), macOS 10.15+, or Ubuntu 20.04+</li>
+</ul>
+<h3 id="installation-tutorial-video">Installation Tutorial Video</h3>
+<p><strong>Watch this video tutorial</strong> for a visual guide through the complete installation process before proceeding with the steps below. don't hesitate to watch it multiple times or press pause if you need to.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tkXblcpbLGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>The video above demonstrates the installation process. If you prefer text instructions or encounter issues, continue reading below.</p>
+<hr />
+<h3 id="get-the-project-files">Get the project files</h3>
+<p>You can get the files using one of the following methods:</p>
+<ul>
+<li>
+<p><strong>Option A: Download ZIP</strong></p>
+<ul>
+<li>Navigate to the "Code" tab on the GitHub repository page.</li>
+<li>Select "Download ZIP".</li>
+<li>Extract the contents of the ZIP file to your desired location.</li>
+</ul>
+</li>
+<li>
+<p><strong>Option B: Git Clone</strong></p>
+<ul>
+<li>Open your terminal and run the following command:
+    <code>bash
+    git clone https://github.com/Cortical-interactome/scLRSomatoDev.git</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="download-the-required-data">Download the required data</h3>
+<ul>
+<li>Visit our <a href="https://github.com/Cortical-interactome/scLRSomatoDev/">Zenodo repository</a> (TODO: Finish Zenodo Repo + add URL).</li>
+<li>Download the <code>data.zip</code> file.</li>
+<li>Extract the contents into your scLRSomatoDev folder.</li>
+<li>Verify your folder structure matches the following folder structure :</li>
+</ul>
+<p><img alt="Folder structure" src="../img/Folder_structure.png" /></p>
+<h2 id="run-sclrsomatodev">Run scLRSomatoDev</h2>
+<blockquote>
+<p>[!NOTE]
+Choose your preferred installation method below. <strong>Docker is recommended</strong> for most users as it provides a consistent, isolated environment.</p>
+</blockquote>
+<h3 id="using-docker-recommended">Using Docker (Recommended)</h3>
+<blockquote>
+<p><strong>Why Docker?</strong> Docker ensures all dependencies are properly configured and isolated from your system, making installation more reliable.</p>
+</blockquote>
+<h4 id="prerequisites">Prerequisites</h4>
+<ul>
+<li><strong>Docker</strong>: If you don't have Docker installed, please <a href="https://www.docker.com/products/docker-desktop/">download and install it</a> before proceeding.</li>
+</ul>
+<h4 id="1-build-the-docker-image">1. Build the Docker Image</h4>
+<p>Open your terminal, navigate to the project's root directory (the one containing the <code>Dockerfile</code>), and run:</p>
+<p><strong>On Linux, Windows and macOS (Intel/AMD):</strong></p>
+<pre><code class="language-bash">docker build -t sclrshiny .
+</code></pre>
+<p><strong>On macOS (Apple Silicon):</strong></p>
+<pre><code class="language-bash">docker buildx build --platform linux/amd64 -t sclrshiny .
+</code></pre>
+<p>The initial build may take around 20 minutes to download and install the required R packages. Subsequent builds will be much faster.</p>
+<h4 id="2-run-the-docker-container">2. Run the Docker Container</h4>
+<p>To create a local container from the image you just built, run the appropriate command for your system from the project's root directory:</p>
+<p><strong>On Linux or macOS:</strong></p>
+<pre><code class="language-bash">docker run --rm -p 3838:3838 -v &quot;$(pwd)/Data:/app/Data&quot; sclrshiny
+</code></pre>
+<p><strong>On Windows (Command Prompt):</strong></p>
+<pre><code class="language-bash">docker run --rm -p 3838:3838 -v &quot;%cd%\\Data:/app/Data&quot; sclrshiny
+</code></pre>
+<p><strong>On Windows (PowerShell):</strong></p>
+<pre><code class="language-bash">docker run --rm -p 3838:3838 -v &quot;${PWD}\\Data:/app/Data&quot; sclrshiny
+</code></pre>
+<p>This command mounts your local <code>Data</code> directory to the <code>/app/Data</code> directory inside the container, which is where the app expects to find the data.</p>
+<h4 id="3-launch-the-app">3. Launch the App</h4>
+<p>After running the command, your terminal will display:</p>
+<pre><code>Listening on http://0.0.0.0:3838
+</code></pre>
+<p>The app will be available at http://localhost:3838. It may take a few moments to load.</p>
+<blockquote>
+<p>You only need to <strong>build the image once</strong>. For future use, you can simply <strong>run the container</strong> and open the link in your web browser.</p>
+<p><strong>Success with Docker?</strong> Great! <a href="#next-steps">Jump to Next Steps</a> to start using the app.<br />
+<strong>Having issues?</strong> Try the <a href="#using-rstudio">RStudio installation method</a> below or check our <a href="#troubleshooting">troubleshooting guide</a>.</p>
+</blockquote>
+<h3 id="using-rstudio">Using RStudio</h3>
+<blockquote>
+<p><strong>Alternative Method</strong>: If Docker doesn't work for your system or you prefer direct R development, use this RStudio-based installation. <a href="#using-docker-recommended">← Back to Docker instructions</a></p>
+</blockquote>
+<h4 id="prerequisites_1">Prerequisites</h4>
+<ul>
+<li><strong>R</strong>: Tested with R versions 4.3.2 and 4.2. <a href="https://pbil.univ-lyon1.fr/CRAN/">Download here</a>.</li>
+<li><strong>RStudio</strong>: <a href="https://posit.co/download/rstudio-desktop/">Download here</a>.</li>
+<li><strong>Conda</strong>: <a href="https://www.anaconda.com/download/success">Download Anaconda or Miniconda</a>.</li>
+</ul>
+<h4 id="setup-instructions">Setup Instructions</h4>
+<ul>
+<li>Create a conda environment using the provided environment file:</li>
+</ul>
+<pre><code class="language-bash">conda env create -f environment_scLRSomatoDev.yml
+</code></pre>
+<ul>
+<li>Activate the environment:</li>
+</ul>
+<pre><code class="language-bash">conda activate r_env
+</code></pre>
+<ul>
+<li>
+<p>Open RStudio and set the working directory to the scLRSomatoDev folder.</p>
+</li>
+<li>
+<p>To run the Shiny app, click the 'Run' or 'Play' button in either the <code>ui.r</code> or <code>server.r</code> file or run the following command in the console:</p>
+</li>
+</ul>
+<pre><code class="language-r">shiny::runApp(&quot;app.R&quot;)
+</code></pre>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<blockquote>
+<p>[!CAUTION]
+<strong>Need Help?</strong> This section provides solutions for common installation issues. If you're new to R package management, start with the basics above.<br />
+<a href="#run-sclrshiny">← Back to main installation methods</a> | <a href="https://github.com/Cortical-interactome/scLRSomatoDev/issues">Report an issue</a></p>
+</blockquote>
+<p>Since R can be tricky when managing dependencies, we have included a list of packages in the <code>environment_scLRSomatoDev.yml</code> file.</p>
+<ul>
+<li>If you encounter an error, you may need to install the missing R packages. You can do this by running the following commands in the console:</li>
+</ul>
+<p>for a single specific package:   </p>
+<pre><code class="language-r">install.packages(&quot;package_name&quot;)
+</code></pre>
+<p>for multiple packages:</p>
+<pre><code class="language-r">install.packages(c(&quot;package_name1&quot;, &quot;package_name2&quot;, &quot;package_name3&quot;))
+</code></pre>
+<p>some packages might not be available on CRAN, you can install them from Bioconductor or github using the following command:</p>
+<p>for Bioconductor packages:</p>
+<pre><code class="language-r">BiocManager::install(&quot;package_name&quot;)
+</code></pre>
+<p>for github packages:</p>
+<pre><code class="language-r">remotes::install_github(&quot;username/repo&quot;)
+</code></pre>
+<p>We are aware that R packages management and dependencies can be difficult. If you cannot find the package you need, you can ask for help on the <a href="https://github.com/Cortical-interactome/scLRSomatoDev/issues">issues</a> page.</p>
+<blockquote>
+<p>[!WARNING]
+<strong>Need Help?</strong> If you encounter any issues during installation, check our <a href="#troubleshooting">troubleshooting section</a> above or ask for help on the <a href="https://github.com/Cortical-interactome/scLRSomatoDev/issues">issues</a> page.</p>
+</blockquote>
+<h2 id="next-steps">Next Steps</h2>
+<p>Once you have successfully installed the app, you can start exploring scLRSomatoDev's features and functionalities. Here are some recommended next steps:</p>
+<h3 id="quick-start">Quick Start</h3>
+<ul>
+<li><strong>Launch the app</strong> using the instructions in the <a href="#run-sclrshiny">Run scLRSomatoDev</a> section above</li>
+<li><strong>Explore the interface</strong> - The app opens with an "Overview" page that introduces the main features</li>
+</ul>
+<h3 id="learn-more">Learn More</h3>
+<ul>
+<li><strong><a href="../Gene%20Expression/">Gene Expression Analysis</a></strong> - Learn about visualizing gene expression data, clustering results, and developmental trajectories</li>
+<li><strong><a href="../Ligand-Receptor/">Ligand-Receptor Interactions</a></strong> - Discover cell-cell communication analysis and signaling pathways</li>
+<li><strong><a href="../About/">About the Project</a></strong> - Read about the scientific background and methodology</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="../js/custom.js"></script>
+      
+    
+  </body>
+</html>
